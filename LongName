@@ -1,0 +1,30 @@
+package pkg_arraylist;
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class LongName {
+
+	public static void main(String[] args) {
+
+		Scanner sc = new Scanner(System.in);
+		ArrayList<String> nameList = new ArrayList<String>();
+
+		for (int i = 0; i < 4; i++) {
+			System.out.print("이름을 입력하세요 >> ");
+			String name = sc.nextLine();
+			nameList.add(name);
+
+		}
+		System.out.println(nameList);
+		String longName = nameList.get(0);
+		for (int i = 0; i < 4; i++) {
+			if (nameList.get(i).length() > longName.length()) {
+				longName = nameList.get(i);
+			}
+		}
+		System.out.println("가장 긴 이름은 : " + longName);
+
+	}
+
+}
